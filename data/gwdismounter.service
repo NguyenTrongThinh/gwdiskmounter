@@ -1,0 +1,15 @@
+[Unit]
+Description=Auto mount disk service
+Require=udisks2
+After=udisks2
+
+[Service]
+Type=simple
+ExecStart=/opt/gwdiskmounter/bin/gwdiskmounter
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+Alias=dismounterdaemon.service
+
